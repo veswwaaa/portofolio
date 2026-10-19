@@ -54,6 +54,14 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
 
   const formattedCount = views !== null ? views.toLocaleString() : "—";
 
+  if (variant === 'number-only') {
+    return (
+      <span className={className}>
+        {isLoading ? "..." : `${formattedCount}+`}
+      </span>
+    );
+  }
+
   if (variant === 'minimal') {
     return (
       <span className={`inline-flex items-center gap-1.5 font-mono text-xs ${className}`}>

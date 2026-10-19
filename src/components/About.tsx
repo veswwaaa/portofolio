@@ -3,6 +3,7 @@ import { School, Cpu, Heart, Sparkles, User, Image as ImageIcon, GitBranch } fro
 import { portfolioData } from '../data';
 import { Counter } from './animations/Counter';
 import { Reveal } from './animations/Reveal';
+import { VisitorCounter } from './VisitorCounter';
 
 export const About: React.FC = () => {
   const { bio, school, skills, interests, stats, photoUrl } = portfolioData;
@@ -254,7 +255,7 @@ export const About: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 sm:gap-4 border-t border-brutal pt-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-brutal pt-4">
                   {/* Public Repos */}
                   <div>
                     <div className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brutal">
@@ -271,7 +272,7 @@ export const About: React.FC = () => {
                       <Counter to={githubStats.years} suffix="+" />
                     </div>
                     <span className="font-mono text-[9px] sm:text-xs text-brutal-muted uppercase mt-1 block leading-tight">
-                      Tahun Belajar Coding
+                      Tahun Coding
                     </span>
                   </div>
 
@@ -281,7 +282,18 @@ export const About: React.FC = () => {
                       <Counter to={githubStats.commits} suffix="+" />
                     </div>
                     <span className="font-mono text-[9px] sm:text-xs text-brutal-muted uppercase mt-1 block leading-tight">
-                      Total Commit GitHub
+                      Total Commit
+                    </span>
+                  </div>
+
+                  {/* Live Visitor Count */}
+                  <div>
+                    <div className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-accent-theme">
+                      <VisitorCounter variant="number-only" />
+                    </div>
+                    <span className="font-mono text-[9px] sm:text-xs text-brutal-muted uppercase mt-1 block leading-tight flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-theme animate-pulse" />
+                      Pengunjung Web
                     </span>
                   </div>
                 </div>
