@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #F2EEE6;
+    --text: #141414;
+    --text-muted: #6B6760;
+    --border: #141414;
+    --accent: #FF4D1C;
+    --card-bg: #EAE5DC;
+  }
+
+  .dark {
+    --bg: #0E0E0E;
+    --text: #F2EEE6;
+    --text-muted: #9E988F;
+    --border: #2A2A2A;
+    --accent: #FF4D1C;
+    --card-bg: #161616;
+  }
+
+  /* Accent theme overrides */
+  [data-accent="orange"] {
+    --accent: #FF4D1C;
+  }
+  [data-accent="lime"] {
+    --accent: #B8E817;
+  }
+  [data-accent="cobalt"] {
+    --accent: #3D5AFE;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  /* Lenis smooth scrolling recommendation */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+/* Custom font utilities */
+.font-display {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+}
+
+.font-serif-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Custom Cursor default hide on devices with coarse pointer */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Brutalist grid lines */
+.border-brutal {
+  border-color: var(--border);
+}
+
+.bg-brutal {
+  background-color: var(--bg);
+}
+
+.text-brutal {
+  color: var(--text);
+}
+
+.text-brutal-muted {
+  color: var(--text-muted);
+}
+
+.bg-accent-theme {
+  background-color: var(--accent);
+}
+
+.text-accent-theme {
+  color: var(--accent);
+}
+
+.border-accent-theme {
+  border-color: var(--accent);
+}
