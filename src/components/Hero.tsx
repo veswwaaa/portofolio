@@ -5,6 +5,7 @@ import { portfolioData } from '../data';
 import { Typewriter } from './animations/Typewriter';
 import { ScrambleText } from './animations/ScrambleText';
 import { Magnetic } from './animations/Magnetic';
+import { VisitorCounter } from './VisitorCounter';
 
 export const Hero: React.FC = () => {
   const { headline, role, learningBadge } = portfolioData;
@@ -17,26 +18,31 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-between pt-32 pb-16 md:pt-40 md:pb-24 border-b border-brutal">
-      <div className="max-w-[1280px] w-full mx-auto px-6 md:px-12 flex flex-col justify-between flex-1">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24 border-b border-brutal">
+      <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-between flex-1">
         {/* Top Badges / Meta row */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 md:mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8 md:mb-12">
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-brutal bg-brutal font-mono text-[11px] sm:text-xs uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-accent-theme animate-ping" />
-            <span className="font-semibold text-accent-theme">●</span>
-            <ScrambleText text={learningBadge} />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-brutal bg-brutal font-mono text-[10px] sm:text-xs uppercase tracking-wider max-w-full overflow-hidden">
+            <span className="w-2 h-2 rounded-full bg-accent-theme animate-ping shrink-0" />
+            <span className="font-semibold text-accent-theme shrink-0">●</span>
+            <span className="truncate">
+              <ScrambleText text={learningBadge} />
+            </span>
           </div>
 
-          {/* Location & Institution */}
-          <div className="font-mono text-[11px] sm:text-xs text-brutal-muted uppercase tracking-widest">
-            BANJARBARU, ID <span>— RPL TELKOM</span>
+          {/* Right Meta: Visitor Counter + Location & Institution */}
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+            <VisitorCounter variant="badge" />
+            <div className="font-mono text-[10px] sm:text-xs text-brutal-muted uppercase tracking-widest hidden md:block">
+              BANJARBARU, ID <span>— RPL TELKOM</span>
+            </div>
           </div>
         </div>
 
         {/* Main Display Headline (Balanced, proportional editorial brutalist typography) */}
-        <div className="my-auto py-6 max-w-5xl">
-          <h1 className="font-display font-bold leading-[1.08] tracking-tight text-[clamp(1.75rem,4.2vw,3.75rem)] uppercase text-brutal">
+        <div className="my-auto py-4 sm:py-6 max-w-5xl">
+          <h1 className="font-display font-bold leading-[1.08] tracking-tight text-[clamp(1.5rem,4.5vw,3.75rem)] uppercase text-brutal break-words">
             <span className="block overflow-hidden">
               <motion.span
                 className="inline-block"

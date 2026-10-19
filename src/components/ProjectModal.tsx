@@ -29,15 +29,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 20 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto border-2 border-brutal bg-brutal text-brutal shadow-2xl z-10 p-6 md:p-8"
+          className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto border-2 border-brutal bg-brutal text-brutal shadow-2xl z-10 p-4 sm:p-6 md:p-8"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between border-b border-brutal pb-4 mb-6">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-sm px-2 py-0.5 bg-accent-theme text-white font-bold">
+          <div className="flex items-center justify-between border-b border-brutal pb-3 sm:pb-4 mb-4 sm:mb-6">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+              <span className="font-mono text-xs sm:text-sm px-2 py-0.5 bg-accent-theme text-white font-bold">
                 {project.number}
               </span>
-              <span className="font-mono text-xs uppercase text-brutal-muted tracking-widest">
+              <span className="font-mono text-[10px] sm:text-xs uppercase text-brutal-muted tracking-wider sm:tracking-widest">
                 {project.category} • {project.year}
               </span>
             </div>
@@ -51,7 +51,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Project Image */}
-          <div className="relative aspect-video w-full overflow-hidden border border-brutal mb-6 bg-black/10">
+          <div className="relative aspect-video w-full overflow-hidden border border-brutal mb-4 sm:mb-6 bg-black/10">
             <img
               src={project.image}
               alt={project.title}
@@ -60,23 +60,23 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Title & Description */}
-          <h2 className="font-display text-2xl sm:text-4xl font-bold uppercase tracking-tight mb-3">
+          <h2 className="font-display text-xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight mb-2 sm:mb-3">
             {project.title}
           </h2>
-          <p className="font-body text-base sm:text-lg text-brutal leading-relaxed max-w-2xl mb-6">
+          <p className="font-body text-sm sm:text-base md:text-lg text-brutal leading-relaxed max-w-2xl mb-5 sm:mb-6">
             {project.description}
           </p>
 
           {/* Tools & Tech Chips */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <span className="block font-mono text-xs uppercase tracking-widest text-brutal-muted mb-2 flex items-center gap-2">
               <Layers size={13} /> Tools & Teknologi:
             </span>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-3 py-1 font-mono text-xs uppercase border border-brutal bg-brutal font-medium hover:border-accent-theme transition-colors"
+                  className="px-2.5 py-1 font-mono text-[11px] sm:text-xs uppercase border border-brutal bg-brutal font-medium hover:border-accent-theme transition-colors"
                 >
                   {tool}
                 </span>
@@ -85,13 +85,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Action Links */}
-          <div className="flex flex-wrap gap-3 pt-4 border-t border-brutal">
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-4 border-t border-brutal">
             {project.demoUrl && (
               <a
                 href={project.demoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-theme text-white font-mono text-xs uppercase tracking-wider font-bold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent-theme text-white font-mono text-xs uppercase tracking-wider font-bold hover:opacity-90 transition-opacity w-full sm:w-auto"
               >
                 <span>Live Demo</span>
                 <ExternalLink size={14} />
@@ -102,7 +102,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-brutal bg-brutal text-brutal font-mono text-xs uppercase tracking-wider font-bold hover:bg-brutal/80 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-brutal bg-brutal text-brutal font-mono text-xs uppercase tracking-wider font-bold hover:bg-brutal/80 transition-colors w-full sm:w-auto"
               >
                 <Code2 size={14} />
                 <span>Source Code</span>

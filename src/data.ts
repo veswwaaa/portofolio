@@ -98,9 +98,9 @@ export const portfolioData: PersonalInfo = {
   ],
   stats: [
     {
-      value: 12,
+      value: 32,
       suffix: "+",
-      label: "Proyek Dibuat"
+      label: "Proyek & Repositori"
     },
     {
       value: 3,
@@ -108,9 +108,9 @@ export const portfolioData: PersonalInfo = {
       label: "Tahun Belajar Coding"
     },
     {
-      value: 120,
+      value: 219,
       suffix: "+",
-      label: "Jam Ngulik Mikrokontroler"
+      label: "Total Commit GitHub"
     }
   ],
   email: "vanoaji402@gmail.com",

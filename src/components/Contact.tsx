@@ -5,6 +5,7 @@ import { portfolioData } from '../data';
 import { Toast } from './Toast';
 import { Reveal } from './animations/Reveal';
 import { SplitText } from './animations/SplitText';
+import { VisitorCounter } from './VisitorCounter';
 
 export const Contact: React.FC = () => {
   const { email, socials } = portfolioData;
@@ -36,35 +37,35 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="kontak" className="py-24 md:py-36 bg-brutal text-brutal">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+    <section id="kontak" className="py-16 sm:py-24 md:py-36 bg-brutal text-brutal">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12">
         {/* Giant Headline */}
-        <div className="pb-12 md:pb-20 border-b border-brutal">
-          <span className="font-mono text-xs uppercase tracking-widest text-accent-theme block mb-4 font-semibold">
+        <div className="pb-8 sm:pb-12 md:pb-20 border-b border-brutal">
+          <span className="font-mono text-xs uppercase tracking-widest text-accent-theme block mb-3 font-semibold">
             // HUBUNGI SAYA
           </span>
-          <h2 className="font-display font-bold text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-none text-brutal">
+          <h2 className="font-display font-bold text-4xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-none text-brutal break-words">
             <SplitText by="char">Ngobrol yuk.</SplitText>
           </h2>
-          <p className="mt-6 font-mono text-xs sm:text-sm text-brutal-muted max-w-xl uppercase tracking-wider">
+          <p className="mt-4 sm:mt-6 font-mono text-xs sm:text-sm text-brutal-muted max-w-xl uppercase tracking-wider">
             Terbuka untuk diskusi proyek IoT, kolaborasi web app, atau sekadar bertukar ide seputar teknologi.
           </p>
         </div>
 
         {/* Copy Email Bar */}
-        <div className="py-8 md:py-12 border-b border-brutal flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <div>
-            <span className="font-mono text-xs uppercase text-brutal-muted tracking-widest block mb-1">
+        <div className="py-6 sm:py-8 md:py-12 border-b border-brutal flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6">
+          <div className="overflow-hidden">
+            <span className="font-mono text-[11px] sm:text-xs uppercase text-brutal-muted tracking-widest block mb-1">
               EMAIL LANGSUNG:
             </span>
-            <span className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-brutal">
+            <span className="font-display text-xl sm:text-3xl md:text-4xl font-bold tracking-tight text-brutal break-all sm:break-normal block">
               {email}
             </span>
           </div>
 
           <button
             onClick={handleCopyEmail}
-            className="group relative inline-flex items-center gap-3 px-6 py-4 border-2 border-brutal bg-brutal font-mono text-xs uppercase tracking-widest font-bold text-brutal overflow-hidden cursor-pointer"
+            className="group relative inline-flex items-center justify-center gap-3 px-5 py-3.5 sm:px-6 sm:py-4 border-2 border-brutal bg-brutal font-mono text-xs uppercase tracking-widest font-bold text-brutal overflow-hidden cursor-pointer w-full sm:w-auto shrink-0"
             data-cursor="Copy"
           >
             <span className="absolute inset-0 bg-accent-theme translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" />
@@ -115,13 +116,16 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-brutal flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-brutal-muted uppercase tracking-wider">
-          <div>
-            © {new Date().getFullYear()} SELVANO SENA A.P — SMK TELKOM BANJARBARU
+        <footer className="mt-20 pt-8 border-t border-brutal flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-brutal-muted uppercase tracking-wider">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div>
+              © {new Date().getFullYear()} SELVANO SENA A.P — SMK TELKOM BANJARBARU
+            </div>
+            <VisitorCounter variant="footer" />
           </div>
 
           <div className="flex items-center gap-6">
-            <span>{portfolioData.footerNote}</span>
+            <span className="hidden sm:inline">{portfolioData.footerNote}</span>
             <button
               onClick={scrollToTop}
               className="text-brutal hover:text-accent-theme font-bold cursor-pointer inline-flex items-center gap-1"

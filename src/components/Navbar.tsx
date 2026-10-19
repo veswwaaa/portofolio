@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-[60] bg-brutal/90 backdrop-blur-md border-b border-brutal transition-colors duration-300"
       >
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12 h-18 flex items-center justify-between">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 h-16 sm:h-18 flex items-center justify-between">
           {/* Logo / Initials */}
           <a
             href="#"
@@ -77,13 +77,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
 
           {/* Right Navigation */}
-          <div className="flex items-center gap-6 md:gap-8">
-            <nav className="flex items-center gap-5 sm:gap-7">
+          <div className="flex items-center gap-2.5 sm:gap-5 md:gap-8">
+            <nav className="flex items-center gap-3 sm:gap-5 md:gap-7">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="relative group py-1 text-xs md:text-sm font-mono uppercase tracking-widest text-brutal hover:text-accent-theme transition-colors duration-200"
+                  className="relative group py-1 text-[11px] sm:text-xs md:text-sm font-mono uppercase tracking-wider sm:tracking-widest text-brutal hover:text-accent-theme transition-colors duration-200"
                 >
                   <ScrambleText text={link.label} />
                   <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-accent-theme group-hover:w-full transition-all duration-300 ease-out" />

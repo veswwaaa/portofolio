@@ -28,16 +28,16 @@ export const Projects: React.FC = () => {
       id="proyek"
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative py-24 md:py-36 border-b border-brutal overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-36 border-b border-brutal overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-8 md:pb-12 border-b border-brutal">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 sm:pb-8 md:pb-12 border-b border-brutal">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-accent-theme block mb-2 font-semibold">
               // ARSIP KARYA PILIHAN
             </span>
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight text-brutal">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold uppercase tracking-tight text-brutal">
               Daftar Proyek
             </h2>
           </div>
