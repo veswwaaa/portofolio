@@ -3,7 +3,7 @@ import { Eye } from 'lucide-react';
 
 interface VisitorCounterProps {
   className?: string;
-  variant?: 'badge' | 'footer' | 'minimal';
+  variant?: 'badge' | 'footer' | 'minimal' | 'number-only';
 }
 
 const COUNTER_KEY = 'veswwaaa_portfolio_visits';
